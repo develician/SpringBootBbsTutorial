@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.killi8n.bbs.AccountMapper">
+    <insert id="register">
+        insert into accounts (username, password, email) values (#{username}, #{password}, #{email})
+    </insert>
+
+    <select id="checkExistingUsername" resultType="com.killi8n.bbs.models.Account">
+        select * from accounts where username = #{username}
+    </select>
+
+    <select id="checkExistingEmail" resultType="com.killi8n.bbs.models.Account">
+        select * from accounts where email = #{email}
+    </select>
+</mapper>
