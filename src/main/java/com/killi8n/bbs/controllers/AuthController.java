@@ -32,7 +32,6 @@ public class AuthController {
     private Environment env;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    @ResponseBody
     public ResponseEntity<Map<String, Boolean>> register(@RequestBody Account account) {
 
         String username = account.getUsername();
@@ -115,7 +114,6 @@ public class AuthController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ResponseBody
     public ResponseEntity<Map<String, Object>> login(@RequestBody Account account) {
 
         Map<String, Object> resultMap = new HashMap<>();
@@ -168,7 +166,6 @@ public class AuthController {
     }
 
     @RequestMapping(value = "/check", method = RequestMethod.POST)
-    @ResponseBody
     public ResponseEntity<Map<String, Boolean>> checkLogged(@RequestHeader(value = "Authorization") String token) {
 
         Map<String, Boolean> resultMap = new HashMap<>();
